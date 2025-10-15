@@ -1,0 +1,18 @@
+{
+    "sequence": [],
+    "modules": [],
+    "components": [],
+    "config": [
+        {
+            "path": "dev\/yireo_logexcludes\/enabled",
+            "label": "Yireo LogExcludes > Allow Excluding Patterns from Logs",
+            "description": ""
+        },
+        {
+            "path": "dev\/yireo_logexcludes\/patterns",
+            "label": "Yireo LogExcludes > Exclude Patterns",
+            "description": ""
+        }
+    ],
+    "tests": []
+}
