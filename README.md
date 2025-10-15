@@ -13,6 +13,6 @@ Note that this module does **not** work together with the Yireo Whoops plugin.
 ## Configuration
 Navigate in the Magento Admin Panel to **Stores > Configuration > Advanced > Developer > Yireo LogExcludes** and configure the following:
 
-- **Enable Log Filtering** (`dev/yireo_logexcludes/enabled`)
-- **Exclude Patterns** (`dev/yireo_logexcludes/patterns`)
+- **Enable Log Filtering** (`system/yireo_logexcludes/enabled`)
+- **Exclude Patterns** (`system/yireo_logexcludes/patterns`)
 

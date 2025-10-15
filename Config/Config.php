@@ -8,8 +8,8 @@ use Magento\Store\Model\ScopeInterface;
 
 class Config
 {
-    private const XML_ENABLED = 'dev/yireo_logexcludes/enabled';
-    private const XML_PATTERNS = 'dev/yireo_logexcludes/patterns';
+    private const XML_ENABLED = 'system/yireo_logexcludes/enabled';
+    private const XML_PATTERNS = 'system/yireo_logexcludes/patterns';
 
     public function __construct(
         private ScopeConfigInterface $scopeConfig

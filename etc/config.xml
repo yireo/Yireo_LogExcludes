@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <config>
     <default>
-        <dev>
+        <system>
             <yireo_logexcludes>
                 <enabled>1</enabled>
                 <patterns>Foobar</patterns>
             </yireo_logexcludes>
-        </dev>
+        </system>
     </default>
 </config>
