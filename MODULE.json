@@ -16,5 +16,7 @@
     ],
     "tests": [],
     "module_name": "Yireo_LogExcludes",
-    "composer_name": "yireo/magento2-log-excludes"
+    "composer_name": "yireo/magento2-log-excludes",
+    "phpcs_severity": "7",
+    "phpstan_level": "5"
 }
