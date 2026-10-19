@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Yireo\LogExcludes\Config;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Store\Model\ScopeInterface;
 
 class Config
 {
@@ -18,16 +17,12 @@ class Config
 
     public function isEnabled(): bool
     {
-        return (bool)$this->scopeConfig->getValue(
-            self::XML_ENABLED, ScopeInterface::SCOPE_WEBSITE
-        );
+        return (bool)$this->scopeConfig->getValue(self::XML_ENABLED);
     }
 
     public function getPatterns(): array
     {
-        $lines = explode("\n", (string)$this->scopeConfig->getValue(
-            self::XML_PATTERNS, ScopeInterface::SCOPE_WEBSITE
-        ));
+        $lines = explode("\n", (string)$this->scopeConfig->getValue(self::XML_PATTERNS));
 
         $patterns = [];
         foreach ($lines as $line) {
