@@ -26,7 +26,7 @@ class Config
 
         $patterns = [];
         foreach ($lines as $line) {
-            $line = trim($line);
+            $line = trim($line, " \f\n\r\t\v\x00");
             if ($line === '') {
                 continue;
             }
