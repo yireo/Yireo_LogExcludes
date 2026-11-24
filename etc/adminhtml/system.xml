@@ -1,19 +1,35 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
-
     <system>
-        <section id="system" translate="label" sortOrder="910" showInDefault="1" showInWebsite="1" showInStore="0">
-            <group id="yireo_logexcludes" translate="label" sortOrder="100" showInDefault="1" showInWebsite="0">
-                <label>Yireo LogExcludes</label>
+        <section id="yireo_logexcludes" translate="label" sortOrder="920" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Yireo LogExcludes</label>
+            <tab>advanced</tab>
+            <resource>Yireo_LogExcludes::config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
 
-                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0">
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Allow Excluding Patterns from Logs</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
 
-                <field id="patterns" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="0">
+                <field id="min_level" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Never Exclude From Level</label>
+                    <comment>Log records of this level or higher are always written. Emergency records are never excluded.</comment>
+                    <source_model>Yireo\LogExcludes\Config\Source\LogLevel</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="patterns" translate="label comment" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Exclude Patterns</label>
+                    <comment>One pattern per line. A log message containing a pattern is not written. Each pattern needs at least 6 characters, with a maximum of 50 patterns.</comment>
+                    <backend_model>Yireo\LogExcludes\Config\Backend\Patterns</backend_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
                 </field>
             </group>
         </section>

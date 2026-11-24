@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <default>
-        <system>
-            <yireo_logexcludes>
-                <enabled>1</enabled>
-                <patterns>Foobar</patterns>
-            </yireo_logexcludes>
-        </system>
+        <yireo_logexcludes>
+            <general>
+                <enabled>0</enabled>
+                <min_level>400</min_level>
+                <patterns/>
+            </general>
+        </yireo_logexcludes>
     </default>
 </config>

@@ -2,7 +2,7 @@
 
 namespace Yireo\LogExcludes\Plugin;
 
-use Monolog\JsonSerializableDateTimeImmutable;
+use DateTimeImmutable;
 use Monolog\Level;
 use Monolog\Logger;
 use Yireo\LogExcludes\Util\MessageMatcher;
@@ -14,12 +14,16 @@ class ExcludeMessagePlugin
     ) {
     }
 
-    public function aroundAddRecord(Logger $subject,
+    public function aroundAddRecord(
+        Logger $subject,
         callable $proceed,
-        int|Level $level, string $message, array $context = [],
-        JsonSerializableDateTimeImmutable|null $datetime = null
+        int|Level $level,
+        string $message,
+        array $context = [],
+        ?DateTimeImmutable $datetime = null
     ): bool {
-        if ($this->messageMatcher->match($message)) {
+        $levelValue = $level instanceof Level ? $level->value : $level;
+        if ($this->messageMatcher->match($levelValue, $message)) {
             return true;
         }
 
